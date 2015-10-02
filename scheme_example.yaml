@@ -1,0 +1,2 @@
+node-1: /dev/sda,/dev/sdb
+node-2: /dev/sdb

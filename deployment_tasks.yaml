@@ -1,0 +1,30 @@
+- id: cinder-block-device
+  type: group
+  role: [cinder-block-device]
+  requires: [deploy_start]
+  required_for: [deploy_end]
+  tasks: [ hiera, globals, tools, logging, netconfig, hosts, task-cinder-block-device ]
+  required_for: [deploy_end]
+  parameters:
+    strategy:
+      type: parallel
+
+- id: task-cinder-block-device
+  type: puppet
+  groups: [ 'cinder-block-device' ]
+  required_for: [deploy_end]
+  requires: [deploy_start, hiera, netconfig, hosts]
+  parameters:
+    puppet_manifest: cinder-block-device.pp
+    puppet_modules: /etc/puppet/modules
+    timeout: 3600
+
+- id: cinder-scheduler-filter
+  type: puppet
+  groups: [ primary-controller, controller ]
+  requires: [deploy_start, openstack-controller]
+  required_for: [deploy_end]
+  parameters:
+    puppet_manifest: cinder-scheduler-drivers.pp
+    puppet_modules: /etc/puppet/modules
+    timeout: 3600
