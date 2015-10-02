@@ -1,0 +1,20 @@
+- id: cinder-block-device
+  type: group
+  role: [cinder-block-device]
+  requires: [deploy_start, top-role-cinder]
+  required_for: [deploy_end]
+  tasks: [ hiera, globals, tools, logging, netconfig, hosts, task-cinder-block-device ]
+  required_for: [deploy_end]
+  parameters:
+    strategy:
+      type: parallel
+
+- id: task-cinder-block-device
+  type: puppet
+  groups: [ 'cinder-block-device', 'cinder' ]
+  required_for: [deploy_end]
+  requires: [deploy_start]
+  parameters:
+    puppet_manifest: cinder-block-device.pp
+    puppet_modules: puppet/modules:/etc/puppet/modules
+    timeout: 3600
