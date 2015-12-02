@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Sergey Reshetnyak <sreshetniak@mirantis.com>
+Workflow+1: Sergey Reshetnyak <sreshetniak@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 02 Dec 2015 12:53:52 +0000
+Reviewed-on: https://review.openstack.org/252365
+Project: openstack/fuel-plugin-block-device
+Branch: refs/heads/master
