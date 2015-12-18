@@ -1,0 +1,10 @@
+Code-Review+1: Andrey Pavlov <apavlov@mirantis.com>
+Code-Review+2: Sergey Lukjanov <slukjanov@mirantis.com>
+Code-Review+2: Denis Egorenko <degorenko@mirantis.com>
+Workflow+1: Denis Egorenko <degorenko@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 Dec 2015 09:04:19 +0000
+Reviewed-on: https://review.openstack.org/252899
+Project: openstack/fuel-plugin-block-device
+Branch: refs/heads/master
