@@ -1,7 +1,0 @@
-attributes:
-  block_device_scheme:
-    label: 'Cinder Block Devices scheme'
-    description: 'This scheme should describe which disks should be used by each node for Block Device. Should be in YAML format. For example: https://github.com/openstack/fuel-plugin-block-device/blob/master/scheme_example.yaml'
-    weight: 5
-    type: "file"
-    value: "No file selected"
